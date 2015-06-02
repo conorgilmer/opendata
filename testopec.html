@@ -1,0 +1,37 @@
+<head>
+   <title>Google Chart Example</title>
+   <script src="https://www.google.com/jsapi"></script>
+   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<!--   <script src="http://www.conorgilmer.com/opendata/js/jquery.csv-0.71.js"></script> -->
+   <script src="https://jquery-csv.googlecode.com/files/jquery.csv-0.71.js"></script>
+   <script type='text/javascript'>
+   // load the visualization library from Google and set a listener
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawCandlefromQuandl);
+  
+   function drawCandlefromQuandl(){
+     // grab the CSV
+         $.get("https://www.quandl.com/api/v1/datasets/OPEC/ORB.csv?&auth_token=xcN1MXUnC_248YofABy-&trim_start=2010-05-23&trim_end=2015-05-23&collapse=weekly&sort_order=asc", function(csvString) {
+         // transform the CSV string into a 2-dimensional array
+            var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+         // this new DataTable object holds all the data
+            var data = new google.visualization.arrayToDataTable(arrayData);
+         // this view can select a subset of the data at a time
+            var view = new google.visualization.DataView(data);
+          //  view.setColumns([0,3,1,5,2]);
+         var options = {
+         title: "OPEC Prices from Quandl",
+         curveType: 'function',
+          vAxis: {title: "Price in Dollars"},
+          legend: 'none'
+          };
+          var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+          chart.draw(view, options);
+         });
+   }
+   </script>
+</head>
+<body>
+   <div id="linechart" style="width: 900px; height: 500px;"> </div>   
+</body>
+
