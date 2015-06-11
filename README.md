@@ -13,4 +13,12 @@ run script to populate tables from csv files
 or
 download file to json, populate mysql tables from json files
 
+#databases
++ urllinks
+  + code (Varchar 10)
+  + urllink (Varchar 50)
+  + firstrun (date)
+  + lastrun (date)
+  + frequency 
+
 
