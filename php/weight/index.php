@@ -15,7 +15,7 @@ $res=$con->select($table);
 
 <div id="header">
 	<div id="content">
-    <label>OO Interface</label>
+    <label>Weight Monitor</label>
     </div>
 </div>
 <div id="body">
