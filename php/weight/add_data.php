@@ -36,7 +36,7 @@ if(isset($_POST['btn-save']))
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>PHP Data Insert and Select Data</title>
+<title>Weight Monitor</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
@@ -44,7 +44,7 @@ if(isset($_POST['btn-save']))
 
 <div id="header">
 	<div id="content">
-    <label>PHP Data Insert and Select Data </label>
+    <label>Weight Monitor </label>
     </div>
 </div>
 <div id="body">
