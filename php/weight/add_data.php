@@ -51,26 +51,44 @@ if(isset($_POST['btn-save']))
 	<div id="content">
     <form method="post">
     <table align="center">
+  <tr>
+    <th><a href="add_data.php">Add Reading</a></th>
+    <th><a href="index.php">List</a></th>
+    <th><a href="genlines.php">Graph</a></th>
+    </tr>
+
+
     <tr>
-    <td><input type="text" name="low" placeholder="Low" required /></td>
+    <td colspan="3"><input type="text" name="low" placeholder="Low" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="high" placeholder="High" required /></td>
+    <td colspan="3"><input type="text" name="high" placeholder="High" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="wdate" placeholder="Date" required /></td>
+    <td colspan="3"><input type="text" name="wdate" placeholder="Date" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="comment" placeholder="Comment" required /></td>
+    <td colspan="3"><input type="text" name="comment" placeholder="Comment" required /></td>
     </tr>
     <tr>
-    <td>
+    <td colspan="3">
+
     <button type="submit" name="btn-save"><strong>SAVE</strong></button></td>
     </tr>
     </table>
     </form>
     </div>
 </div>
+
+
+<div id="footer">
+        <div id="content">
+    <hr /><br/>
+    <label>No Copyright: <a href="http://www.conorgilmer.com">conorgilmer.com</a></label>
+    </div>
+</div>
+
+
 
 </center>
 </body>
