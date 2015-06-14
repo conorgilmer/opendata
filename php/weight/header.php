@@ -1,3 +1,6 @@
+
+<!-- header.php -->
+
   <body>
 <center>
 <div id="header">

@@ -1,4 +1,6 @@
 
+<!--footer.php -->
+
 <div id="footer">
         <div id="content">
     <hr /><br/>

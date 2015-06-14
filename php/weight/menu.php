@@ -1,3 +1,6 @@
+
+<!--Menu.php -->
+
 <div id="body">
         <div id="content">
 <table align="center">
