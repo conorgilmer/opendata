@@ -64,7 +64,9 @@ $jsonTable = json_encode($table);
       var options = {
           title: 'My Weight',
           width: 800,
-          height: 600
+          height: 600,
+ 	  vAxis: {title: "Weight (Kilos)"},
+          hAxis: {title: "Dates"}
         };
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
