@@ -75,13 +75,8 @@ $jsonTable = json_encode($table);
     </script>
   </head>
 
-  <body>
-<center>
-<div id="header">
-        <div id="content">
-    <label>Weight Monitor</label>
-    </div>
-</div>
+<?php include('header.php'); ?>
+
 <div id="body">
         <div id="content">
 <table align="center">
@@ -98,18 +93,8 @@ $jsonTable = json_encode($table);
 </div>
 </div>
 
-<div id="footer">
-        <div id="content">
-    <hr /><br/>
-    <label>No Copyright: <a href="http://www.conorgilmer.com">conorgilmer.com</a></label>
-    </div>
-</div>
 
 
-</center>
-  </body>
-</html>
-
-
+<?php include('footer.php'); ?>
 
 

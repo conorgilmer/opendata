@@ -2,7 +2,7 @@
 <center>
 <div id="header">
         <div id="content">
-    <label>Weight Monitor</label>
+    <label>My Weight Monitor</label>
     </div>
 </div>
 
