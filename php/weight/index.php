@@ -22,7 +22,8 @@ $res=$con->select($table);
 	<div id="content">
     <table align="center">
     <tr>
-    <th colspan="4"><a href="add_data.php">add weight reading...</a></th>
+    <th colspan="2"><a href="add_data.php">Add Reading</a></th>
+    <th colspan="2"><a href="genlines.php">Graph</a></th>
     </tr>
     <tr>
     <th>Date</th>
@@ -35,9 +36,9 @@ $res=$con->select($table);
 	{
 			?>
             <tr>
-            <td><?php echo $row[1]; ?></td>
-            <td><?php echo $row[2]; ?></td>
             <td><?php echo $row[3]; ?></td>
+            <td><?php echo $row[2]; ?></td>
+            <td><?php echo $row[1]; ?></td>
             <td><?php echo $row[4]; ?></td>
             </tr>
             <?php
