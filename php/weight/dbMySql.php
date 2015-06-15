@@ -20,6 +20,19 @@ class DB_con
   $res=mysql_query("SELECT * FROM myweight");
   return $res;
  }
+
+ public function delete($table,$id)
+ {
+  $res = mysql_query("DELETE FROM $table WHERE user_id=".$id);
+  return $res;
+ }
+ 
+ public function update($table,$id,$low,$high,$wdate,$comment)
+ {
+  $res = mysql_query("UPDATE $table SET low='$low', high='$high', date='$wdate', comment='$comment' WHERE user_id=".$id);
+  return $res;
+ }
+
 }
 
 ?>
