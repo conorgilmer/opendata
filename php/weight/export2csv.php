@@ -3,12 +3,12 @@
 // Database Connection
 include('config.php');
 
-$host     = SERVER;
-$uname    = USER;
-$pass     = PWD;
-$database = DB;
+$host     = DB_SERVER;
+$uname    = DB_USER;
+$pass     = DB_PASS;
+$database = DB_NAME;
 
-$table    = "markers";
+$table    = "myweight";
 $filename = "export.csv";
 
 $connection=mysql_connect($host,$uname,$pass); 
