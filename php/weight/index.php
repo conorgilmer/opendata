@@ -9,6 +9,24 @@ $res=$con->select($table);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>My Weight</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript">
+function del_id(id)
+{
+ if(confirm('Sure to delete this record ?'))
+ {
+  window.location='delete_data.php?delete_id='+id
+ }
+}
+function edit_id(id)
+{
+ if(confirm('Sure to edit this record ?'))
+ {
+  window.location='edit_data.php?edit_id='+id
+ }
+}
+</script>
+
 </head>
 
 <?php include('header.php');  ?>
@@ -18,6 +36,7 @@ $res=$con->select($table);
     <table align="center">
     <tr>
     <th colspan="2"><a href="add_data.php">Add Reading</a></th>
+    <th colspan="2"><a href="index.php">List Readings</a></th>
     <th colspan="2"><a href="genlines.php">Graph</a></th>
     </tr>
     <tr>
@@ -25,6 +44,7 @@ $res=$con->select($table);
     <th>Low</th>
     <th>High</th>
     <th>Comment</th>
+    <th colspan="2">Actions</th>
     </tr>
     <?php
 	while($row=mysql_fetch_row($res))
@@ -35,6 +55,9 @@ $res=$con->select($table);
             <td><?php echo $row[2]; ?></td>
             <td><?php echo $row[1]; ?></td>
             <td><?php echo $row[4]; ?></td>
+ <td align="center"><a href="javascript:edit_id(<?php echo $row[0]; ?>)"><img src="b_edit.png" alt="EDIT" /></a></td>
+            <td align="center"><a href="javascript:del_id(<?php echo $row[0]; ?>)"><img src="b_drop.png" alt="DELETE" /></a></td>
+       
             </tr>
             <?php
 	}
