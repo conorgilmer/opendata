@@ -23,13 +23,13 @@ class DB_con
 
  public function delete($table,$id)
  {
-  $res = mysql_query("DELETE FROM $table WHERE user_id=".$id);
+  $res = mysql_query("DELETE FROM $table WHERE id=".$id);
   return $res;
  }
  
  public function update($table,$id,$low,$high,$wdate,$comment)
  {
-  $res = mysql_query("UPDATE $table SET low='$low', high='$high', date='$wdate', comment='$comment' WHERE user_id=".$id);
+  $res = mysql_query("UPDATE $table SET low='$low', high='$high', date='$wdate', comment='$comment' WHERE id=".$id);
   return $res;
  }
 
