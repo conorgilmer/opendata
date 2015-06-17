@@ -1,7 +1,7 @@
 <?php
 include_once 'dbMySql.php';
 $con = new DB_con();
-$table = "users";
+$table = "urllinks";
 $res=$con->select($table);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -34,13 +34,14 @@ $res=$con->select($table);
     </tr>
     <?php
 	while($row=mysql_fetch_row($res))
-	{
+	{ 
 			?>
             <tr>
             <td><?php echo $row[1]; ?></td>
-            <td><?php echo $row[2]; ?></td>
-            <td><?php echo $row[3]; ?></td>
-            <td><?php echo $row[3]; ?></td>
+            <td><a href="<?php echo $row[0]; ?>">Link</a></td>
+            <td><?php echo $row[4]; ?></td>
+            <td><?php echo $row[5]; ?></td>
+            <td><a href="graph.php?id=<?php echo $row[0]; ?>">Graph</a></td>
             </tr>
             <?php
 	}
