@@ -1,5 +1,6 @@
 <?php
 include_once 'dbMySql.php';
+include_once 'quandl.php';
 $con = new DB_con();
 $table = "urllinks";
 $res=$con->select($table);
@@ -39,7 +40,7 @@ $res=$con->select($table);
 			?>
             <tr>
             <td><?php echo $row[1]; ?></td>
-            <td><a href="<?php echo $row[0]; ?>">Link</a></td>
+            <td><a href="<?php echo $row[2]. '?&auth_token=xcN1MXUnC_248YofABy-'; ?>">Link</a></td>
             <td><?php echo $row[3]; ?></td>
             <td><?php echo $row[4]; ?></td>
             <td><?php echo $row[5]; ?></td>
