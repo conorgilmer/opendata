@@ -23,11 +23,12 @@ $res=$con->select($table);
     <table align="center">
     <tr>
     <th colspan="3"><a href="add_code.php">Add Data Code</a></th>
-    <th colspan="2"><a href="index.php">List Data</a></th>
+    <th colspan="3"><a href="index.php">List Data</a></th>
     </tr>
     <tr>
     <th>Code</th>
     <th>URL</th>
+    <th>Table</th>
     <th>Start</th>
     <th>Last</th>
     <th>Action</th>
@@ -39,6 +40,7 @@ $res=$con->select($table);
             <tr>
             <td><?php echo $row[1]; ?></td>
             <td><a href="<?php echo $row[0]; ?>">Link</a></td>
+            <td><?php echo $row[3]; ?></td>
             <td><?php echo $row[4]; ?></td>
             <td><?php echo $row[5]; ?></td>
             <td><a href="graph.php?id=<?php echo $row[0]; ?>">Graph</a></td>
