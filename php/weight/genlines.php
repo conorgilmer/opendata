@@ -5,7 +5,7 @@
     $db =  mysql_connect(DB_SERVER,DB_USER,DB_PASS);
     mysql_select_db(DB_NAME);    
 	
-// The Chart table contain two fields: Date and PercentageChange
+// The Chart table contain three fields: Date and PercentageChange
 $queryData = mysql_query("
   SELECT	low,
                 high,
