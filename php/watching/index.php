@@ -11,14 +11,8 @@ $res=$con->select($table);
 <title>Watching Data from Quandl</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-<body>
-<center>
 
-<div id="header">
-	<div id="content">
-    <label>Watching Data from Quandl</label>
-    </div>
-</div>
+<?php include('header.php'); ?>
 <div id="body">
 	<div id="content">
     <table align="center">
@@ -44,7 +38,7 @@ $res=$con->select($table);
             <td><?php echo $row[3]; ?></td>
             <td><?php echo $row[4]; ?></td>
             <td><?php echo $row[5]; ?></td>
-            <td><a href="graph.php?id=<?php echo $row[3]; ?>">Graph</a></td>
+            <td><a href="graph.php?table=<?php echo $row[3]; ?>">Graph</a></td>
             <td><a href="up.php?id=<?php echo $row[3]; ?>">Upload</a></td>
             <td><a href="down.php?id=<?php echo $row[3]; ?>">CSV</a></td>
             </tr>
@@ -55,13 +49,4 @@ $res=$con->select($table);
     </div>
 </div>
 
-<div id="footer">
-	<div id="content">
-    <hr /><br/>
-    <label>by Conor Gilmer</label>
-    </div>
-</div>
-
-</center>
-</body>
-</html>
+<?php include ('footer.php'); ?>
