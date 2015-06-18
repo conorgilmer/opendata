@@ -19,7 +19,7 @@ class DB_con
  */
  public function select($table)
  {
-  $res=mysql_query("SELECT * FROM urllinks");
+  $res=mysql_query("SELECT * FROM $table");
   return $res;
  }
 }
