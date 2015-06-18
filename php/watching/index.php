@@ -44,9 +44,9 @@ $res=$con->select($table);
             <td><?php echo $row[3]; ?></td>
             <td><?php echo $row[4]; ?></td>
             <td><?php echo $row[5]; ?></td>
-            <td><a href="graph.php?id=<?php echo $row[0]; ?>">Graph</a></td>
-            <td><a href="up.php?id=<?php echo $row[0]; ?>">Upload</a></td>
-            <td><a href="down.php?id=<?php echo $row[0]; ?>">CSV</a></td>
+            <td><a href="graph.php?id=<?php echo $row[3]; ?>">Graph</a></td>
+            <td><a href="up.php?id=<?php echo $row[3]; ?>">Upload</a></td>
+            <td><a href="down.php?id=<?php echo $row[3]; ?>">CSV</a></td>
             </tr>
             <?php
 	}
