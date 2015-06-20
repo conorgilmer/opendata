@@ -31,8 +31,8 @@ while($r = mysql_fetch_assoc($queryData)) {
 	$temp[] = array('v' => (string) $r['thedate']); 
 
 	//Values of the each slice
-	$temp[] = array('v' => (float) ( $r['high'])); 
 	$temp[] = array('v' => (float) ( $r['rate'])); 
+	$temp[] = array('v' => (float) ( $r['high'])); 
 	$temp[] = array('v' => (float) ( $r['low'])); 
 	$rows[] = array('c' => $temp);
 }
