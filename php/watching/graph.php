@@ -12,27 +12,28 @@ $queryData = mysql_query("
 	rate,
 	high,
 	low
-        FROM $tablename");
+        FROM $tablename ORDER BY date ASC"  );
 
 
 $table = array();
 $table['cols'] = array(
     array('label' => 'Date', 'type' => 'string'),
     array('label' => 'Rate', 'type' => 'number'),
-    array('label' => 'Low', 'type' => 'number'),
-    array('label' => 'High', 'type' => 'number')
+    array('label' => 'High', 'type' => 'number'),
+    array('label' => 'Low', 'type' => 'number')
 );
 //First Series
 $rows = array();
 while($r = mysql_fetch_assoc($queryData)) {
+//print_r($r);
 	$temp = array();
 	// the following line will used to slice the Pie chart
 	$temp[] = array('v' => (string) $r['thedate']); 
 
 	//Values of the each slice
+	$temp[] = array('v' => (float) ( $r['high'])); 
 	$temp[] = array('v' => (float) ( $r['rate'])); 
 	$temp[] = array('v' => (float) ( $r['low'])); 
-	$temp[] = array('v' => (float) (($r['high']))); 
 	$rows[] = array('c' => $temp);
 }
 
@@ -46,7 +47,7 @@ $jsonTable = json_encode($table);
 <html>
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>My Weight</title>
+<title><?php echo $tablename; ?></title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -66,10 +67,10 @@ $jsonTable = json_encode($table);
       // Create our data table out of JSON data loaded from server.
       var data = new google.visualization.DataTable(<?=$jsonTable?>);
       var options = {
-          title: 'My Weight',
+          title: '<?php echo $tablename; ?>',
           width: 800,
           height: 600,
- 	  vAxis: {title: "Weight (Kilos)"},
+ 	  vAxis: {title: "Price"},
           hAxis: {title: "Dates"}
         };
       // Instantiate and draw our chart, passing in some options.
@@ -85,9 +86,7 @@ $jsonTable = json_encode($table);
         <div id="content">
 <table align="center">
     <tr>
-    <th colspan="2"><a href="add_data.php">Add Reading</a></th>
-    <th colspan="2"><a href="index.php">List</a></th>
-    <th colspan="2"><a href="genlines.php">Graph</a></th>
+    <th colspan="6"><a href="index.php">List</a></th>
     </tr>
 <tr><td colspan="6">
 
