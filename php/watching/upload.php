@@ -40,6 +40,15 @@ h2 {
 <?php include('header.php');?>
 <div id="body">
 <div id="content">
+ <table align="center">
+    <tr>
+    <th><a href="index.php">List Data</a></th>
+    </tr>
+    <tr>
+    <th>Upload</th>
+    </tr>
+<tr><td>
+
 <div id="form">
 
 <?php
@@ -87,6 +96,8 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+
+</td></tr></table>
 
 </div>
 </div>
