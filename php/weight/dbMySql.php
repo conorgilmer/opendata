@@ -11,7 +11,7 @@ class DB_con
  
  public function insert($low,$high,$wdate,$comment)
  {
-  $res = mysql_query("INSERT myweight(id, low, high, date,comment) VALUES('','$low','$high','$wdate','$comment')");
+  $res = mysql_query("INSERT myweight(id, low, high, date,comment,ts) VALUES('','$low','$high','$wdate','$comment', now())");
   return $res;
  }
  
