@@ -5,12 +5,12 @@ Graph using google graphs.
 + list weights
 + add weight
 + graph weight
++ calculate Average weight a day?
 + update weight record
 + delete weight record
 + export to csv file
 
 # Ideas/Todo
-+ Average weight a day?
 + Merge with Walks?
 + Map Calories used in walks with weight?
 + Add Login facility
