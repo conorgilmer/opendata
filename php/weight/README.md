@@ -8,3 +8,9 @@ Graph using google graphs.
 + update weight record
 + delete weight record
 + export to csv file
+
+# Ideas/Todo
++ Average weight a day?
++ Merge with Walks?
++ Map Calories used in walks with weight?
++ Add Login facility
