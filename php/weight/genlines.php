@@ -17,6 +17,7 @@ $table = array();
 $table['cols'] = array(
     array('label' => 'Date', 'type' => 'string'),
     array('label' => 'Low', 'type' => 'number'),
+    array('label' => 'Avg', 'type' => 'number'),
     array('label' => 'High', 'type' => 'number')
 );
 //First Series
@@ -28,6 +29,7 @@ while($r = mysql_fetch_assoc($queryData)) {
 
 	//Values of the each slice
 	$temp[] = array('v' => (float) ( $r['low'])); 
+	$temp[] = array('v' =>((( (float) $r['high']) + ((float) $r['low'])) /2.0)); 
 	$temp[] = array('v' => (float) (($r['high']))); 
 	$rows[] = array('c' => $temp);
 }
@@ -65,6 +67,7 @@ $jsonTable = json_encode($table);
           title: 'My Weight',
           width: 800,
           height: 600,
+	  interpolateNulls: true,
  	  vAxis: {title: "Weight (Kilos)"},
           hAxis: {title: "Dates"}
         };
